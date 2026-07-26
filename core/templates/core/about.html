@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}من نحن | TechFix{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container page-hero-grid">
+        <div>
+            <span class="eyebrow dark">من نحن</span>
+            <h1>فكرة بسيطة لتنظيم<br>خدمات الصيانة</h1>
+            <p>
+                TechFix مشروع ويب مبني باستخدام Django، هدفه تنظيم طلبات صيانة الحاسوب وتسهيل التواصل بين العميل والفني والإدارة.
+            </p>
+        </div>
+        <div class="page-number">01</div>
+    </div>
+</section>
+
+<section class="about-story section">
+    <div class="container about-grid">
+        <div class="about-image-wrap">
+            <img src="{% static 'core/images/about-team.jpg' %}" alt="فنية تقوم بصيانة جهاز حاسوب محمول">
+            <div class="image-note">
+                <strong>TechFix</strong>
+                <span>Care • Repair • Track</span>
+            </div>
+        </div>
+
+        <div class="about-copy">
+            <span class="section-label">قصتنا</span>
+            <h2>بدأ المشروع من مشكلة يومية</h2>
+            <p>
+                كثير من مراكز الصيانة تعتمد على الأوراق أو الرسائل المتفرقة، مما يجعل متابعة الأجهزة والملاحظات والتكاليف أمرًا صعبًا.
+            </p>
+            <p>
+                لذلك جاءت فكرة TechFix كنظام بسيط يجمع بيانات العميل والجهاز وحالة الصيانة في مكان واحد، مع إمكانية تطويره أسبوعًا بعد أسبوع.
+            </p>
+
+            <div class="about-highlight">
+                <strong>هدفنا في النسخة الأولى</strong>
+                <span>واجهة واضحة، معلومات مرتبة، وتجربة سهلة على الجوال والكمبيوتر.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="values section">
+    <div class="container">
+        <div class="section-head">
+            <div>
+                <span class="section-label">مبادئ العمل</span>
+                <h2>أشياء بسيطة تصنع خدمة أفضل</h2>
+            </div>
+        </div>
+
+        <div class="value-grid">
+            {% for value in values %}
+            <article class="value-card">
+                <span>0{{ forloop.counter }}</span>
+                <h3>{{ value.title }}</h3>
+                <p>{{ value.text }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="roadmap section">
+    <div class="container roadmap-grid">
+        <div>
+            <span class="section-label light">التطوير القادم</span>
+            <h2>المشروع قابل للنمو كل أسبوع</h2>
+        </div>
+        <div class="roadmap-items">
+            <div><span>الأسبوع 02</span><b>نموذج طلب صيانة</b></div>
+            <div><span>الأسبوع 03</span><b>قاعدة بيانات العملاء والأجهزة</b></div>
+            <div><span>الأسبوع 04</span><b>تسجيل الدخول والصلاحيات</b></div>
+            <div><span>الأسبوع 05</span><b>لوحة متابعة الطلبات</b></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
